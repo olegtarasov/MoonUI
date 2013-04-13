@@ -5,7 +5,7 @@
 
 
 	<Color x:Key="Fill_active_top">#FF8FC1E5</Color>
-	<Brush x:Key="Fill_active_top_">#FF8FC1E5</Brush>
+	<Brush x:Key="Fill_active_top_brush">#FF8FC1E5</Brush>
 	<Color x:Key="Fill_active_bottom">#FF6bacdd</Color>
 	<Color x:Key="Fill_active_bottom_dark">#FF5699cc</Color>
 	<Color x:Key="Stroke_active_top">#FF5cace8</Color>
@@ -27,27 +27,27 @@
 	<Color x:Key="Fill_over_bottom">#FFF6F6F6</Color>
 	<Color x:Key="Fill_pressed_light">#FF6D6D6D</Color>
 	<Color x:Key="Fill_pressed_dark">#FF545454</Color>
-	<Brush x:Key="Fill_pressed_light_">#FF6D6D6D</Brush>
-	<Brush x:Key="Fill_pressed_dark_">#FF545454</Brush>
+	<Brush x:Key="Fill_pressed_light_brush">#FF6D6D6D</Brush>
+	<Brush x:Key="Fill_pressed_dark_brush">#FF545454</Brush>
 
 	<Brush x:Key="Shadow_first_color">#19000000</Brush>
 	<Brush x:Key="Shadow_second_color">#0C000000</Brush>
 
 	<Color x:Key="CheckBox_main_color">#FFd7d7d7</Color>
-	<Brush x:Key="CheckBox_main_color_">#FFd7d7d7</Brush>
+	<Brush x:Key="CheckBox_main_brush">#FFd7d7d7</Brush>
 	<Color x:Key="CheckBox_stroke_color">#FFbababa</Color>
-	<Brush x:Key="CheckBox_stroke_color_">#FFbababa</Brush>
+	<Brush x:Key="CheckBox_stroke_brush">#FFbababa</Brush>
 	<Color x:Key="CheckBox_fill_top">#FFfafafa</Color>
 	<Color x:Key="CheckBox_fill_bottom">#FFe9e9e9</Color>
-	<Brush x:Key="CheckBox_fill_bottom_">#FFe9e9e9</Brush>
+	<Brush x:Key="CheckBox_fill_bottom_brush">#FFe9e9e9</Brush>
 
 	<Color x:Key="TextBox_fill">#FFeeeeee</Color>
-	<Brush x:Key="TextBox_fill_">#FFeeeeee</Brush>
+	<Brush x:Key="TextBox_fill_brush">#FFeeeeee</Brush>
 	
 	<Color x:Key="Text_dark">#FF515151</Color>
-	<Brush x:Key="Text_dark_">#FF515151</Brush>
-	<Brush x:Key="Text_light_">#FFFFFFFF</Brush>
-	<Brush x:Key="Text_disabled_">#80000000</Brush>
+	<Brush x:Key="Text_dark_brush">#FF515151</Brush>
+	<Brush x:Key="Text_light_brush">#FFFFFFFF</Brush>
+	<Brush x:Key="Text_disabled_brush">#80000000</Brush>
 
 	<Style TargetType="{x:Type Button}">
 		<Setter Property="SnapsToDevicePixels" Value="true" />
@@ -126,7 +126,7 @@
 						<TextBlock HorizontalAlignment="Stretch"
 							VerticalAlignment="Center" x:Name="textBlock1" Margin="0,0.5,0,-1" TextWrapping="Wrap" Text="{TemplateBinding Content}" TextAlignment="Center" Foreground="White" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}"/>
 						<TextBlock HorizontalAlignment="Stretch"
-							VerticalAlignment="Center" x:Name="textBlock" Margin="0" TextWrapping="Wrap" Text="{TemplateBinding Content}" TextAlignment="Center" Foreground="{StaticResource Text_dark_}" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}" Padding="{TemplateBinding Padding}"/>
+							VerticalAlignment="Center" x:Name="textBlock" Margin="0" TextWrapping="Wrap" Text="{TemplateBinding Content}" TextAlignment="Center" Foreground="{StaticResource Text_dark_brush}" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}" Padding="{TemplateBinding Padding}"/>
                         <ContentPresenter x:Name="ContentPresnt" TextElement.Foreground="Transparent" TextBlock.Foreground="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
                     </Grid>
 				</ControlTemplate>
@@ -993,7 +993,7 @@
 </ControlTemplate>
 
 <Style TargetType="ComboBox">
-	<Setter Property="Foreground" Value="{DynamicResource Text_dark_}" />
+	<Setter Property="Foreground" Value="{DynamicResource Text_dark_brush}" />
     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -1072,10 +1072,10 @@
             	</Grid>
                 <ControlTemplate.Triggers>
                 	<Trigger Property="IsDropDownOpen" Value="True">
-                		<Setter Property="Foreground"  Value="{DynamicResource Text_light_}"/>
+                		<Setter Property="Foreground"  Value="{DynamicResource Text_light_brush}"/>
 					</Trigger>
 					<Trigger Property="IsEnabled" Value="False">
-                		<Setter Property="Foreground"  Value="{DynamicResource Text_disabled_}"/>
+                		<Setter Property="Foreground"  Value="{DynamicResource Text_disabled_brush}"/>
 					</Trigger>
             		<Trigger Property="HasItems" Value="false">
             			<Setter Property="MinHeight" TargetName="DropDownBorder" Value="95" />
@@ -1182,14 +1182,14 @@
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="3"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="3"/>
 					</Grid>
 					<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="2,6" SnapsToDevicePixels="False">
 						<Grid.RowDefinitions>
@@ -1202,18 +1202,18 @@
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="3"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="3"/>
 					</Grid></Grid>
 				<ControlTemplate.Triggers>
 					<Trigger Property="IsEnabled" Value="false">
-						<Setter Property="Fill" TargetName="Background" Value="{StaticResource CheckBox_main_color_}"/>
+						<Setter Property="Fill" TargetName="Background" Value="{StaticResource CheckBox_main_brush}"/>
 					</Trigger>
 				</ControlTemplate.Triggers>
 			</ControlTemplate>
@@ -1285,14 +1285,14 @@
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="3"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1" Grid.Column="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1" Grid.Column="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1" Grid.Column="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1" Grid.Column="3"/>
 					</Grid>
 					<Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="10" Height="6" Margin="0,2.5" SnapsToDevicePixels="False">
 						<Grid.RowDefinitions>
@@ -1305,18 +1305,18 @@
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="1"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="3"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1" Grid.Column="2"/>
-						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1" Grid.Column="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="1"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="3"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1" Grid.Column="2"/>
+						<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1" Grid.Column="3"/>
 					</Grid></Grid>
 				<ControlTemplate.Triggers>
 					<Trigger Property="IsEnabled" Value="false">
-						<Setter Property="Fill" TargetName="Background" Value="{StaticResource CheckBox_main_color_}"/>
+						<Setter Property="Fill" TargetName="Background" Value="{StaticResource CheckBox_main_brush}"/>
 					</Trigger>
 				</ControlTemplate.Triggers>
 			</ControlTemplate>
@@ -1352,7 +1352,7 @@
                                 <VisualState x:Name="Disabled" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Border x:Name="Background" BorderBrush="{DynamicResource CheckBox_stroke_color_}" 
+                        <Border x:Name="Background" BorderBrush="{DynamicResource CheckBox_stroke_brush}" 
                                 BorderThickness="1" CornerRadius="2">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -1372,14 +1372,14 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="2"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="1"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="3"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1" Grid.Column="2"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1" Grid.Column="3"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="3"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1" Grid.Column="3"/>
                                 </Grid>
                                 <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="10" Height="6" Margin="0,2.5" SnapsToDevicePixels="True">
                                     <Grid.RowDefinitions>
@@ -1392,21 +1392,21 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="2"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="1"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="3"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1" Grid.Column="2"/>
-                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1" Grid.Column="3"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="3"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1" Grid.Column="3"/>
                                 </Grid>
                             </Grid>
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="Background" Value="{StaticResource CheckBox_main_color_}"/>
+                            <Setter Property="Background" TargetName="Background" Value="{StaticResource CheckBox_main_brush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -1584,7 +1584,7 @@
               </Ellipse>
               <Ellipse x:Name="CheckMark"
                 Margin="4"
-                Fill="{DynamicResource Fill_pressed_dark_}" />
+                Fill="{DynamicResource Fill_pressed_dark_brush}" />
             </Grid>
           </BulletDecorator.Bullet>
           <ContentPresenter 
@@ -1599,18 +1599,18 @@
 			
           </Trigger>
 		  <Trigger Property="IsChecked" Value="true">
-		  <Setter TargetName="Border" Property="Fill" Value="{DynamicResource CheckBox_fill_bottom_}"  />
+		  <Setter TargetName="Border" Property="Fill" Value="{DynamicResource CheckBox_fill_bottom_brush}"  />
 		  </Trigger>
           <Trigger Property="IsMouseOver" Value="true">
             <Setter TargetName="Border" Property="Fill" Value="#EEE" />
           </Trigger>
           <Trigger Property="IsPressed" Value="true">
-            <Setter TargetName="Border" Property="Fill" Value="{DynamicResource Fill_pressed_dark_}"  />
-			<Setter TargetName="Border" Property="Stroke" Value="{DynamicResource Fill_pressed_light_}"  />
+            <Setter TargetName="Border" Property="Fill" Value="{DynamicResource Fill_pressed_dark_brush}"  />
+			<Setter TargetName="Border" Property="Stroke" Value="{DynamicResource Fill_pressed_light_brush}"  />
           </Trigger>
           <Trigger Property="IsEnabled" Value="false">
-            <Setter TargetName="Border" Property="Fill" Value="{DynamicResource CheckBox_fill_bottom_}"  />
-            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource CheckBox_stroke_color_}" />
+            <Setter TargetName="Border" Property="Fill" Value="{DynamicResource CheckBox_fill_bottom_brush}"  />
+            <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource CheckBox_stroke_brush}" />
             <Setter Property="Foreground" Value="#80000000"/>
           </Trigger>
         </ControlTemplate.Triggers>
@@ -1624,10 +1624,10 @@
 <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
 
 <Style TargetType="{x:Type ListBox}">
-	<Setter Property="Background" Value="{DynamicResource TextBox_fill_}"/>
-	<Setter Property="BorderBrush" Value="{StaticResource CheckBox_stroke_color_}"/>
+	<Setter Property="Background" Value="{DynamicResource TextBox_fill_brush}"/>
+	<Setter Property="BorderBrush" Value="{StaticResource CheckBox_stroke_brush}"/>
 	<Setter Property="BorderThickness" Value="1"/>
-	<Setter Property="Foreground" Value="{DynamicResource Text_dark_}"/>
+	<Setter Property="Foreground" Value="{DynamicResource Text_dark_brush}"/>
 	<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
 	<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
 	<Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
@@ -1676,7 +1676,7 @@
 							</Ellipse>
 							<Ellipse x:Name="CheckMark"
 								Margin="6"
-								Fill="{DynamicResource Fill_pressed_dark_}" />
+								Fill="{DynamicResource Fill_pressed_dark_brush}" />
 						</Grid>
 					</BulletDecorator.Bullet>
 					<ContentPresenter 
@@ -1691,14 +1691,14 @@
 			
 					</Trigger>
 					<Trigger Property="IsChecked" Value="true">
-						<Setter TargetName="Border" Property="Fill" Value="{DynamicResource CheckBox_fill_bottom_}"  />
+						<Setter TargetName="Border" Property="Fill" Value="{DynamicResource CheckBox_fill_bottom_brush}"  />
 					</Trigger>
 					<Trigger Property="IsMouseOver" Value="true">
 						<Setter TargetName="Border" Property="Fill" Value="#EEE" />
 					</Trigger>
 					<Trigger Property="IsPressed" Value="true">
-						<Setter TargetName="Border" Property="Fill" Value="{DynamicResource Fill_pressed_dark_}"  />
-						<Setter TargetName="Border" Property="Stroke" Value="{DynamicResource Fill_pressed_light_}"  />
+						<Setter TargetName="Border" Property="Fill" Value="{DynamicResource Fill_pressed_dark_brush}"  />
+						<Setter TargetName="Border" Property="Stroke" Value="{DynamicResource Fill_pressed_light_brush}"  />
 					</Trigger>
 					<Trigger Property="IsEnabled" Value="false">
 						<Setter TargetName="Border" Property="Fill" Value="#000"  />
@@ -1719,7 +1719,7 @@
     
     
 <Style TargetType="{x:Type TextBox}">
-	<Setter Property="Foreground" Value="{DynamicResource Text_dark_}"/>
+	<Setter Property="Foreground" Value="{DynamicResource Text_dark_brush}"/>
 	<Setter Property="Background" Value="#55FFFFFF"/>
 	<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
 	<Setter Property="BorderThickness" Value="0"/>
@@ -1750,11 +1750,11 @@
 					</Rectangle>
                         <Grid Margin="{TemplateBinding Padding}" VerticalAlignment="Center">
                             <ScrollViewer  x:Name="PART_ContentHost"  BorderThickness="0" IsTabStop="False" Margin="1" 
-                                        Padding="{TemplateBinding Padding}" Foreground="{DynamicResource Text_dark_}" CanContentScroll="False" VerticalContentAlignment="Stretch" />
+                                        Padding="{TemplateBinding Padding}" Foreground="{DynamicResource Text_dark_brush}" CanContentScroll="False" VerticalContentAlignment="Stretch" />
 					</Grid></Grid>
 				<ControlTemplate.Triggers>
 					<Trigger Property="IsEnabled" Value="false">
-						<Setter Property="Fill" TargetName="rectangle" Value="{DynamicResource CheckBox_fill_bottom_}"/>
+						<Setter Property="Fill" TargetName="rectangle" Value="{DynamicResource CheckBox_fill_bottom_brush}"/>
 						<Setter Property="Background" TargetName="PART_ContentHost" Value="#00000000"/>
 						<Setter Property="Foreground" Value="#80000000"/>
 					</Trigger>
@@ -1889,14 +1889,14 @@
 									<ColumnDefinition/>
 									<ColumnDefinition/>
 								</Grid.ColumnDefinitions>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="3"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="3"/>
 							</Grid>
 							<Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="7" Height="10" Margin="4,0,0,0" SnapsToDevicePixels="False">
 								<Grid.RowDefinitions>
@@ -1909,14 +1909,14 @@
 									<ColumnDefinition/>
 									<ColumnDefinition/>
 								</Grid.ColumnDefinitions>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="3"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="3"/>
 							</Grid>
 							<Grid HorizontalAlignment="Right" VerticalAlignment="Center" Width="7" Height="10" Margin="0,0,4,-1" SnapsToDevicePixels="False">
 								<Grid.RowDefinitions>
@@ -1929,14 +1929,14 @@
 									<ColumnDefinition/>
 									<ColumnDefinition/>
 								</Grid.ColumnDefinitions>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="3"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_brush}" Grid.Column="1" Grid.Row="3"/>
 							</Grid>
 							<Grid HorizontalAlignment="Right" VerticalAlignment="Center" Width="7" Height="10" Margin="0,0,4,0" SnapsToDevicePixels="False">
 								<Grid.RowDefinitions>
@@ -1949,14 +1949,14 @@
 									<ColumnDefinition/>
 									<ColumnDefinition/>
 								</Grid.ColumnDefinitions>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="1"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="3"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="2"/>
-								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="1"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Row="3"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="2"/>
+								<Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_brush}" Grid.Column="1" Grid.Row="3"/>
 							</Grid>
 						</Grid></Grid>
 				</Grid>
@@ -1986,7 +1986,7 @@
             <ControlTemplate.Triggers>
               <Trigger Property="IsSelected" Value="true">
                 <Setter TargetName="Backgrd" Property="Fill" Value="{DynamicResource ActiveBrush}"/>
-				<Setter Property="Foreground" Value="{DynamicResource Text_light_}"/>
+				<Setter Property="Foreground" Value="{DynamicResource Text_light_brush}"/>
               </Trigger>
             </ControlTemplate.Triggers>
           </ControlTemplate>
@@ -2010,10 +2010,10 @@
             <ControlTemplate.Triggers>
               <Trigger Property="IsSelected" Value="true">
                 <Setter TargetName="Backgrd" Property="Fill" Value="{DynamicResource ActiveBrush}"/>
-				<Setter Property="Foreground" Value="{DynamicResource Text_light_}"/>
+				<Setter Property="Foreground" Value="{DynamicResource Text_light_brush}"/>
               </Trigger>
 			  <Trigger Property="IsSelected" Value="false">
-				<Setter Property="Foreground" Value="{DynamicResource Text_dark_}"/>
+				<Setter Property="Foreground" Value="{DynamicResource Text_dark_brush}"/>
               </Trigger>
             </ControlTemplate.Triggers>
           </ControlTemplate>
