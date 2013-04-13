@@ -1324,7 +1324,97 @@
 	</Setter>
 </Style>
 
-<Style TargetType="{x:Type Slider}">
+    <Style TargetType="{x:Type GridSplitter}">
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <!--<Setter Property="Height" Value="12"/>-->
+        <!--<Setter Property="Width" Value="22"/>-->
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GridSplitter}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Background.GradientStops[0].Color" Storyboard.TargetName="Background">
+                                            <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Fill_over_top}"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Background.GradientStops[1].Color" Storyboard.TargetName="Background">
+                                            <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Fill_over_bottom}"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" BorderBrush="{DynamicResource CheckBox_stroke_color_}" 
+                                BorderThickness="1" CornerRadius="2">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="{DynamicResource CheckBox_fill_top}" Offset="0"/>
+                                    <GradientStop Color="{DynamicResource CheckBox_fill_bottom}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="10" Height="6" Margin="0,0,0,-1" SnapsToDevicePixels="True">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="1" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Column="3"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_light_}" Grid.Row="1" Grid.Column="3"/>
+                                </Grid>
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="10" Height="6" Margin="0,2.5" SnapsToDevicePixels="True">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="1" Grid.Row="1"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Column="3"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1" Grid.Column="2"/>
+                                    <Rectangle Width="1" Height="1" Fill="{DynamicResource Text_dark_}" Grid.Row="1" Grid.Column="3"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Background" Value="{StaticResource CheckBox_main_color_}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Slider}">
 	<Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
 	<Setter Property="Background" Value="Transparent"/>
 	<Setter Property="Foreground" Value="#FFC4C4C4"/>

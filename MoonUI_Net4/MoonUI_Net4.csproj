@@ -61,6 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Splitter.xaml.cs">
+      <DependentUpon>Splitter.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Splitter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\MoonUICore.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
