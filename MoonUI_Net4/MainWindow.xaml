@@ -53,5 +53,7 @@
             <ComboBoxItem Content="Элемент 2" />
         </ComboBox>
         <Button Content="Нажатая" Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="314,377,0,0" VerticalAlignment="Top" Width="102.2" />
+        <Button Content="Button" HorizontalAlignment="Left" Height="45" Margin="209,10,0,0" VerticalAlignment="Top" Width="107"/>
+        <ToggleButton Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
