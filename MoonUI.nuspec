@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MoonUI</id>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
         <title />
         <authors>NotLimited</authors>
         <owners />
@@ -13,5 +13,6 @@
         <file src="MoonUI_Net4\Theme\Buttons.xaml" target="content\Resources\Buttons.xaml" />
         <file src="MoonUI_Net4\Theme\Colors.xaml" target="content\Resources\Colors.xaml" />
         <file src="MoonUI_Net4\Theme\MoonUICore.xaml" target="content\Resources\MoonUICore.xaml" />
+        <file src="MoonUI_Net4\Theme\SpecialButtons.xaml" target="content\Resources\SpecialButtons.xaml" />
     </files>
 </package>
