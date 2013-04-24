@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ExpanderButtonVertical" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="Grid">
+                        <Path x:Name="path" Data="M0.5,0.5 L9.75,0.5 15.25,6 15.25,28.233999 15.25,28.25 15.25,50.483999 9.75,55.983999 0.5,55.983999 0.5,28.25 0.5,28.233999 z" 
+                              Fill="{StaticResource Fill_normal_horz}"
+                              Stroke="{StaticResource BorderGradientHorz}"
+                              StrokeThickness="1"
+                              Stretch="Fill"
+                              Effect="{StaticResource Shadow_right}">
+                        </Path>
+                        <Path x:Name="arrow" Data="M228.0624,14.937437 C232.8749,19.749937 233.06344,19.938071 233.06344,19.938071 228.82894,24.172788 228.06239,24.938706 228.06239,24.938706" 
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center"
+                              Height="10" Width="5" Stretch="Fill" 
+                              Stroke="{StaticResource Text_dark_brush}"
+                              StrokeThickness="1"
+                              />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False"/>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="path" Property="Fill" Value="{StaticResource Fill_over_horz}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked" Value="False"/>
+                                <Condition Property="IsPressed" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="path" Property="Fill" Value="{StaticResource Fill_pressed_horz}"/>
+                            <Setter TargetName="path" Property="Stroke" Value="{x:Null}"/>
+                            <Setter TargetName="arrow" Property="Stroke" Value="{StaticResource Text_light_brush}"/>
+                            <Setter TargetName="path" Property="Effect" Value="{x:Null}"/>
+                            <Setter TargetName="arrow" Property="LayoutTransform" Value="{StaticResource FlipVertical}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="path" Property="Fill" Value="{StaticResource Fill_pressed_horz}"/>
+                            <Setter TargetName="path" Property="Stroke" Value="{x:Null}"/>
+                            <Setter TargetName="arrow" Property="Stroke" Value="{StaticResource Text_light_brush}"/>
+                            <Setter TargetName="path" Property="Effect" Value="{x:Null}"/>
+                            <Setter TargetName="arrow" Property="LayoutTransform" Value="{StaticResource FlipVertical}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <!--<Setter TargetName="textBlock" Property="Foreground" Value="#5B717171"/>
+                            <Setter TargetName="textBlock1" Property="Foreground" Value="#AFFFFFFF"/>-->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
